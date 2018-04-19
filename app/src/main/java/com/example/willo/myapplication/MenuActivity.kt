@@ -2,9 +2,14 @@ package com.example.willo.myapplication
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.activity_logar.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.activity_registrar.*
@@ -12,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_registrar.*
 class MenuActivity : AppCompatActivity() {
 
     lateinit var usersDBHelper : UsersDBHelper
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +35,47 @@ class MenuActivity : AppCompatActivity() {
         btnReg.setOnClickListener{
             setContentView(R.layout.activity_registrar)
         }
+
+        val btnList = findViewById<Button>(R.id.btnListar)
+        btnList.setOnClickListener{
+            setContentView(R.layout.activity_listar)
+        }
+
+
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.item1 -> {
+                setContentView(R.layout.activity_menu)
+                return super.onOptionsItemSelected(item)
+
+            }
+
+            R.id.item2 -> {
+                setContentView(R.layout.activity_logar)
+                return super.onOptionsItemSelected(item)
+            }
+
+            R.id.item3 -> {
+                setContentView(R.layout.activity_registrar)
+                return super.onOptionsItemSelected(item)
+            }
+
+            R.id.item4 -> {
+                setContentView(R.layout.activity_listar)
+                return super.onOptionsItemSelected(item)
+            }
+            else -> return super.onOptionsItemSelected(item)
+            }
+        }
+
+
 
     fun addUser(v: View){
         var name = this.Iname.text.toString()
@@ -52,17 +98,17 @@ class MenuActivity : AppCompatActivity() {
 //        this.ll_entries.removeAllViews()
     }
 
-//    fun showAllUsers(v:View){
-//        var users = usersDBHelper.readAllUsers()
-//        this.ll_entries.removeAllViews()
-//        users.forEach {
-//            var tv_user = TextView(this)
-//            tv_user.textSize = 30F
-//            tv_user.text = it.name.toString() + " - " + it.age.toString()
-//            this.ll_entries.addView(tv_user)
-//        }
-//        this.textview_result.text = "Fetched " + users.size + " users"
-//    }
+    fun showAllUsers(v:View){
+        var users = usersDBHelper.readAllUsers()
+        this.ll_entries.removeAllViews()
+        users.forEach {
+            var tv_user = TextView(this)
+            tv_user.textSize = 30F
+            tv_user.text = it.name.toString()
+            this.ll_entries.addView(tv_user)
+        }
+        this.textview_result.text = "Usuarios Cadastrados: " + users.size
+    }
 
 
 //

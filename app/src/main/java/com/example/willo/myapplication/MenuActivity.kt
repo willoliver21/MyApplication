@@ -29,11 +29,11 @@ class MenuActivity : AppCompatActivity() {
             setContentView(R.layout.activity_registrar)
         }
 
-//        val btnSave = findViewById<Button>(R.id.btnSave)
-//        btnSave.setOnClickListener{
-//            handler.insertUserData(name.text.toString(),email.text.toString(),password.text.toString())
-//            setContentView(R.layout.activity_menu)
-//        }
+        val btnSave = findViewById<Button>(R.id.btnSave)
+        btnSave.setOnClickListener{
+            handler.insertUserData(name.text.toString(),email.text.toString(),password.text.toString())
+            setContentView(R.layout.activity_menu)
+        }
 //
 //        val btnEntrar = findViewById<Button>(R.id.btnEntrar)
 //        btnEntrar.setOnClickListener{

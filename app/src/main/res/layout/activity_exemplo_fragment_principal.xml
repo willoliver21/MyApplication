@@ -9,8 +9,9 @@
 
     <fragment
         android:id="@+id/fragment1"
+        class="com.example.willo.myapplication.PrimeiroFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.example.willo.myapplication.PrimeiroFragment"/>
+        android:layout_height="match_parent">
+    </fragment>
 
 </LinearLayout>

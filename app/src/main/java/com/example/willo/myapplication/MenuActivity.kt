@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.willo.myapplication.R.id.resultadoConta
+import kotlinx.android.synthetic.main.activity_exemplo_fragment2.*
 import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.activity_logar.*
 import kotlinx.android.synthetic.main.activity_menu.*
@@ -126,6 +128,8 @@ class MenuActivity : AppCompatActivity() {
 //                Toast.makeText(this,"Email ou Senha Errados",Toast.LENGTH_SHORT).show()
 //            }
 //        }
+
+
 
 
     }

@@ -30,7 +30,7 @@
         android:text="Resultados"
         android:textStyle="bold"/>
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/resultadoConta"

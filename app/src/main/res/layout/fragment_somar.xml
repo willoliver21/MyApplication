@@ -13,6 +13,7 @@
         android:layout_gravity="center"
         android:background="#00FFFF"
         android:text="Somar"
+        android:onClick="FunSomar"
         android:textStyle="bold" />
 
 </FrameLayout>
